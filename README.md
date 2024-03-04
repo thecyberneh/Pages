@@ -16,13 +16,12 @@ After some refreshment, I thought "let's start with non-functional testing or se
 After spending some time with the web applications, I was like "Let's test for the most ignored vulnerability **CRLF INJECTION**"
 
 ### What is CRLF?
-
 CRLF refers to the special character elements "CR: Carriage Return" and "LF: Line Feed." These elements are embedded in HTTP headers to signify an End of Line (EOL) marker.
 
 So whenever the server gets CRLF, it assumes that it is the end of the line which is a feature, not a bug.
 
-### What is CRLF Injection?
 
+### What is CRLF Injection?
 CRLF injection occurs when the web server directly renders those special characters without encoding them and passes them to response headers like Location, Set-Cookie, etc.
 
 So basically, when the web application is vulnerable to CRLF injection, we can send those special characters as our payload and the server will parse that as end-of-line,
@@ -73,11 +72,11 @@ I tried with some different payloads like:
 %2F%2E%2E%0D%0ASet-Cookie:whoami=thecyberneh
 ```
 
-After trying that payload, I was only getting **“400 Bad Request”** so I thought that I need something different because most firewall blocks normal and basic payloads.
+After trying that payload, I was only getting **400 Bad Request** so I thought that I need something different because most firewall blocks normal and basic payloads.
 
 I did little research and got some unique encoding called “<mark style="color:orange;">**GBK encoding**</mark>**”.**
 
-## Understanding of Encoding and #FirewallBypass <a href="#bbc8" id="bbc8"></a>
+## Understanding of Encoding and #FirewallBypass
 
 ```
 Payload responsible for CRLF injection is :- 嘍嘊
@@ -125,7 +124,7 @@ So at that time, the server is sending a response like this:- ( by default, as f
 
 <figure><img src=".gitbook/assets/1.jpg" alt=""><figcaption></figcaption></figure>
 
-> So now if I want XSS, I have to insert a Javascript payload in the body section of the Response because Javascript can be render in body and for that, **I have to force the server to send a response like this**
+So now if I want XSS, I have to insert a Javascript payload in the body section of the Response because Javascript can be render in body and for that, **I have to force the server to send a response like this**
 
 <figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
@@ -207,9 +206,8 @@ After running that tool, I got another CRLF in another domain from Microsoft.
 
 I reported both of them and got a response regarding bounty in 3 weeks.
 
-> **Priority: P2**
->
-> **Severity: Important**
+-  **Priority: P2**
+-  **Severity: Important**
 
 And with that, I got a total of $6000 bounty and theMicrosoft Hall of Fame.
 
@@ -217,7 +215,7 @@ A Message for Readers: If you enjoyed this write-up, connect with me on [Twitter
 
 Let me know if I missed anything. Thanks for reading!
 
-### &#x20;Let’s Connect…
+### Let’s Connect…
 
 Twitter :- [https://twitter.com/thecyberneh](https://twitter.com/thecyberneh) \[ [thecyberneh](https://twitter.com/thecyberneh) ]
 
