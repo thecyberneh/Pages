@@ -7,13 +7,7 @@ Hello Hackers, Hope you are doing great. I am Neh Patel, also known as [<mark st
 
 ## Bug: CRLF to XSS and Further Exploitation
 
-Let's dive into the journey:
-
-I spent the last 2-3 weeks on Microsoft searching for valid bugs, primarily focusing on manually checking all subdomains. After testing 50-70 subdomains, I stumbled upon a unique subdomain, likely designed for premium customers.
-
-I decided to explore this subdomain, assuming that its premium features were less explored by other security teams. Despite initially testing non-paid features, I couldn't find anything noteworthy.
-
-Refreshed and recharged, I decided to explore non-functional or server-side testing, specifically focusing on the often ignored vulnerability – CRLF Injection.
+So I was trying for the last 2 or 3 weeks on Microsoft for valid bugs but only got some P4 and P5.My main methodology is to manually check all subdomains, so I tested all the subdomains and mostly all the functionalities on each subdomain.After testing 50 to 70 subdomains, I got a kind of different subdomain ( as per my knowledge, this subdomain includes features for premium customers only ).I thought "let's focus on this subdomain because it has features that are mostly paid so those are less explored by other security teams"I mainly checked all features that are not paid ( do not require any premium for the test ) but did not get anything.
 
 ### What is CRLF?
 
