@@ -7,7 +7,13 @@ Hello Hackers, Hope you are doing great. I am Neh Patel, also known as [<mark st
 
 ## Bug: CRLF to XSS and Further Exploitation
 
-So I was trying for the last 2 or 3 weeks on Microsoft for valid bugs but only got some P4 and P5.My main methodology is to manually check all subdomains, so I tested all the subdomains and mostly all the functionalities on each subdomain.After testing 50 to 70 subdomains, I got a kind of different subdomain ( as per my knowledge, this subdomain includes features for premium customers only ).I thought "let's focus on this subdomain because it has features that are mostly paid so those are less explored by other security teams"I mainly checked all features that are not paid ( do not require any premium for the test ) but did not get anything.
+So I was trying for the last 2 or 3 weeks on Microsoft for valid bugs but only got some P4 and P5.My main methodology is to manually check all subdomains, so I tested all the subdomains and mostly all the functionalities on each subdomain.
+
+After testing 50 to 70 subdomains, I got a kind of different subdomain ( as per my knowledge, this subdomain includes features for premium customers only ).I thought "let's focus on this subdomain because it has features that are mostly paid so those are less explored by other security teams.I mainly checked all features that are not paid ( do not require any premium for the test ) but did not get anything.
+
+After some refreshment, I thought "let's start with non-functional testing or server-side testing". I started with the most popular "Host Header Injection" and some other non-functional testing.
+
+After spending some time with the web applications, I was like "Let's test for the most ignored vulnerability **CRLF INJECTION**"
 
 ### What is CRLF?
 
